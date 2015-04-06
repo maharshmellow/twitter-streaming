@@ -23,7 +23,7 @@ asecret = 'INSERR AUTHORIZATION SECRET HERE'
 class listener(StreamListener):
     
     def on_data(self, data):
-    	#Replace all lines[that have the comment REPLACE with print(data) if you want all the tweet information 
+    	#Replace all lines[that have the comment REPLACE] with print(data) if you want all the tweet information 
         data = json.loads(data)							#REPLACE
         print("TWEET: " + data['text'])						#REPLACE
         print("CREATED AT: " + data['created_at'])				#REPLACE
