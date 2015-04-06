@@ -3,6 +3,9 @@
 Created on Sat Mar 28 19:45:09 2015
 
 @author: Maharsh
+
+This program prints out the tweet, the time the tweet was created, the username, location, and the language of the tweet 
+
 """
 import json
 import time
@@ -11,22 +14,22 @@ from tweepy import Stream
 from tweepy import OAuthHandler
 from tweepy.streaming import StreamListener
 
-ckey = ''
-csecret = ''
-atoken = ''
-asecret = ''
+ckey = 'INSERT CONSUMER KEY HERE'
+csecret = 'INSERT CONSUMER SECRET HERE'
+atoken = 'INSERT AUTHORIZATION TOKEN HERE'
+asecret = 'INSERR AUTHORIZATION SECRET HERE'
 
 
 class listener(StreamListener):
     
     def on_data(self, data):
-        data = json.loads(data)
-        print("TWEET: " + data['text'])
-        print("CREATED AT: " + data['created_at'])
-        print("Username: " + data['user']['screen_name'])
-        print("Location: " + data['user']['location'])
-        print("Language: " + data['user']['lang'])
-        #user - followers_count, friends_count, 
+    	#Replace all lines with print(data) if you want all the information 
+        data = json.loads(data)							#REPLACE
+        print("TWEET: " + data['text'])						#REPLACE
+        print("CREATED AT: " + data['created_at'])				#REPLACE
+        print("Username: " + data['user']['screen_name'])			#REPLACE
+        print("Location: " + data['user']['location'])				#REPLACE
+        print("Language: " + data['user']['lang'])				#REPLACE
         print("\n\n")
         
         return True
